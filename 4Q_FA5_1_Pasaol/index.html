@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Kathleen Rose B. Pasaol">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formative Assessment #5 Part 1</title>
+</head>
+<body>
+    <button onclick="getShape()">Generate</button>
+    <p id="output"></p>
+    <script>
+        function getShape()
+        {
+            let num;
+            do{
+                num = prompt("Please enter a number: ");
+            }
+            while(!check(num));
+            num = parseInt(num);
+            let output = document.getElementById("output");
+            output.innerHTML=`Number Inputted: ${num} <br><br>`;
+            if (num % 2 === 0)
+            {
+                for (var a = num; a > 0; a--)
+                {
+                    for (var i = a; i > 0; i--)
+                    {
+                        output.innerHTML += `${a} `;
+                    }
+                    output.innerHTML += `<br>`;
+                }
+            }
+            else
+            {
+                for (var a = num; a > 0; a--)
+                {
+                    for (var i = num; i > 0; i--)
+                    {
+                        output.innerHTML += `${a} `;
+                    }
+                    output.innerHTML += `<br>`;
+                }
+            }
+        }
+        function check(value)
+        {
+            return !isNaN(parseFloat(value)) && isFinite(value);
+        }
+    </script>
+    
+</body>
+</html>
