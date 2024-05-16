@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Kathleen Pasaol">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formative Assessment # 5 Part 2</title>
+</head>
+<body>
+    <h2>Contacts</h2>
+    <input type="text" id="cInput" placeholder="Enter Contact Name">
+    <button onclick="addcon()">Add</button>
+    <button onclick="remcon()">Remove</button>
+    <p id="conlist"></p>
+    <script>
+        var con = [];
+
+        function addcon()
+        {
+            var conName = document.getElementById("cInput").value;
+            if (con.length < 7)
+            {
+                con.push(conName);
+            }
+            else{
+                con.shift();
+                con.push(conName);
+            }
+            outputCon();
+        }
+
+        function remcon()
+        {
+            if (con.length > 0)                
+            {
+                con.pop();
+                outputCon();
+            }
+        }
+        
+        function outputCon()
+        {
+            document.getElementById("conlist").innerText = con.join(" ");
+        }
+    </script>
+</body>
+</html>
